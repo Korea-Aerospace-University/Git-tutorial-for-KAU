@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: Avenir;
+  font-size: 2.2rem;
+}
+
+#header-container {
+  margin-left: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#img-log {
+  margin: 30px 0 15px 0;
+  border-radius: 12px;
+  width: 50vw;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+#image-container {
+  margin: 1rem 0;
+}
+
+#image-container > img {
+  height: 20vw;
+  max-width: 600px;
+  display: inline-block;
+  margin: 15px 1rem;
+  border-radius: 12px;
+}
