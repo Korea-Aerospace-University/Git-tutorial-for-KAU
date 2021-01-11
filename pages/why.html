@@ -6,6 +6,14 @@
     <title>KAU Git Tutorial</title>
     <link rel="stylesheet" href="../style/why.css" />
     <link rel="stylesheet" href="../style/global.css" />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
   </head>
   <body>
     <div id="header-container">
@@ -13,21 +21,55 @@
     </div>
     <div class="divider"></div>
     <section id="content-container">
-      <h2>1. Git이란 무엇인가요?</h2>
+      <h2>1. 깃(Git)이란 무엇인가요?</h2>
       <p>
-        컴퓨터 네트워크, 산학프로젝트 등 팀 단위의 프로젝트를 경험해보신 분들
-        중에서는 이런 상황이 낯설지 않은 분들도 계실 것입니다.
+        컴퓨터 네트워크, 산학프로젝트 등 팀 단위의 프로젝트 중 이런 경험을
+        해보신 분들도 계실 것입니다.
       </p>
       <div style="text-align: center">
         <figure id="image-container">
-          <img src="../assets/1.jpeg" />
-          <img src="../assets/2.jpeg" />
-          <figcaption>
-            익숙한 상황이죠... 근데 영원히 이럴 수는 없잖아요?
-          </figcaption>
+          <img src="../assets/1.jpeg" loading="lazy" />
+          <img src="../assets/2.jpeg" loading="lazy" />
         </figure>
       </div>
-      <p>Git은 소프트웨어 버전 관리와 협업을 위한 도구입니다.</p>
+      <p>벌써 숨이 턱 막히네요.</p>
+      <p>
+        다만 지금까지는 Git 없이도 어떻게든 프로젝트를 마칠 수 있었지만, 과연
+        이런 거대한 프로젝트에서도 카카오톡으로 코드를 주고받으며 개발할 수
+        있을까요?
+      </p>
+      <div style="text-align: center">
+        <img
+          src="../assets/3.jpeg"
+          loading="lazy"
+          style="
+            width: 90%;
+            max-width: 800px;
+            border-radius: 12px;
+            border: 1px solid #cdcdcd;
+            margin: 1rem 0;
+          "
+        />
+        <figcaption>글쎄요, 쉽진 않을 것 않네요!</figcaption>
+      </div>
+      <h2>2. 깃은 왜 사용하나요?</h2>
+      <div style="display: inline-block; text-align: center; width: 100%">
+        <h4
+          style="
+            margin: 0.5rem 0 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333333;
+          "
+        >
+          "깃은 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당
+          파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다."
+          <span style="color: #aaaaaa; font-style: italic; font-size: 0.8rem"
+            >- 위키피디아 Git 문서 중</span
+          >
+        </h4>
+      </div>
+      <br />
       <p>
         "버전 관리" 라는 말이 아직은 와닿지 않을 수도 있지만
         <span style="color: #e22222"
@@ -36,19 +78,82 @@
         >
       </p>
       <p>
-        그래야만 언제 어떤 부분이 달라졌는지 기록할 수 있고, 코드의 변경사항을
+        그래야만 언제 어떤 코드가 달라졌는지 확인할 수 있고, 코드의 변경사항을
         다른 팀원들과 공유할 수 있기 때문입니다.
       </p>
       <div style="text-align: center">
         <figure id="image-container">
-          <img src="../assets/log.png" id="img-log" />
-          <img src="../assets/react.png" style="border: 1px solid #cdcdcd" />
-          <figcaption>예를 들면 이런 식으로 말이죠!</figcaption>
+          <img src="../assets/log.png" id="img-log" loading="lazy" />
+          <img
+            src="../assets/react.png"
+            style="border: 1px solid #cdcdcd"
+            loading="lazy"
+          />
+          <figcaption>예를 들면 이런 식으로 말이죠 😊</figcaption>
         </figure>
       </div>
+      <h2>3. 깃 설치하기</h2>
+      <div style="font-size: 1.1rem; color: #56828a">
+        * 깃이 설치되어 있고, 깃허브 계정도 보유한 상태라면 다음으로 넘어가셔도
+        됩니다. 😄
+      </div>
+      <ul>
+        <li>
+          <a
+            href="http://git-scm.com/download/win"
+            target="_blank"
+            style="text-decoration: none"
+            ><span class="list-subtitle">1. 윈도우용 Git 다운로드 링크</span></a
+          ><span>
+            - 윈도우 사용자는 자신의 운영체제에 맞는 버전을 설치합니다.</span
+          >
+          <figure id="image-container">
+            <img
+              src="../assets/4.jpeg"
+              style="
+                width: 80%;
+                height: inherit;
+                border-radius: 12px;
+                border: 1px solid rgba(0, 0, 0, 0.07);
+              "
+            />
+          </figure>
+        </li>
+        <li>
+          <span class="list-subtitle">2. MAC용 Git 설치방법</span>
+          <pre><code class="bash">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+          <p>먼저 위 커맨드를 터미널에 붙여넣습니다.</p>
+          <p>
+            이후 homebrew 의 설치가 끝나면 아래 커맨드를 터미널에 입력합니다.
+          </p>
+          <pre><code class="bash">brew install git</code></pre>
+        </li>
+        <br />
+        <li>
+          <span class="list-subtitle">3. Git 설치 확인</span>
+          <p>윈도우는 cmd, 맥은 터미널 창을 열고 아래 명령어를 입력해보세요.</p>
+          <pre><code class="bash">git --version</code></pre>
+        </li>
+        <div style="text-align: center">
+          <figure id="image-container" style="width: 100%">
+            <img
+              src="../assets/5.jpeg"
+              style="border: 1px solid #cdcdcd; height: inherit"
+              loading="lazy"
+            />
+            <img
+              src="../assets/6.jpeg"
+              style="border: 1px solid #cdcdcd; height: inherit"
+              loading="lazy"
+            />
+            <figcaption>이러면 성공적으로 깃이 설치된 겁니다!</figcaption>
+          </figure>
+        </div>
+      </ul>
+      <h2>4. 깃허브(Github) 가입하기</h2>
       <p>
-        아직은 뭐가 뭔지 잘 모르겠지만, 튜토리얼을 따라가면서 하나하나
-        알아가봅시다 :)
+        깃이 코드의 버전을 관리하는 용도였다면 깃허브는 본격적인 협업을 위한
+        도구입니다.
       </p>
     </section>
     <button
