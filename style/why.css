@@ -7,6 +7,16 @@ h1 {
   font-size: 2.2rem;
 }
 
+ul {
+  list-style: none;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-bottom: 30px;
+}
+
 #header-container {
   margin-left: 50px;
   display: flex;
@@ -20,12 +30,6 @@ h1 {
   width: 50vw;
 }
 
-figcaption {
-  font-size: 0.9rem;
-  color: #666666;
-  margin-bottom: 30px;
-}
-
 #image-container {
   margin: 1rem 0;
 }
@@ -36,4 +40,8 @@ figcaption {
   display: inline-block;
   margin: 15px 1rem;
   border-radius: 12px;
+}
+
+.list-subtitle {
+  font-size: 1.1rem;
 }

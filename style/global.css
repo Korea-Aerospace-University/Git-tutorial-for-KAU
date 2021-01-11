@@ -27,6 +27,12 @@ h1 {
   font-size: 2.2rem;
 }
 
+h2 {
+  margin-top: 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.09);
+  padding-bottom: 1rem;
+}
+
 .divider {
   width: inherit;
   border-bottom: 8px solid #40368a;
